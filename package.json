@@ -5,8 +5,11 @@
   "repository": "https://github.com/Kydang2204/mongoose.git",
   "author": "andychicken <83952965+andychicken@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "start" : "nodemon index"
+  },
   "dependencies": {
-    "express": "^4.17.1",
+    "fastify": "^3.23.1",
     "mongoose": "^6.0.12"
   }
 }
