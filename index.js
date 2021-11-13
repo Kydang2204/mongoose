@@ -1,4 +1,4 @@
-const app = require('fastify')({logger: true})
+const app = require('fastify')({ logger: true })
 
-app.register(require("./routes"))
+app.register(require('./routes'))
 app.listen(3000)

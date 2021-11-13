@@ -1,5 +1,6 @@
-module.exports = async(router)=>{
-    router.get('/',()=>{
-        return "hello"
-    })
+module.exports = async (router) => {
+  router.get('/', () => {
+    return 'hello'
+  })
 }
+// 6D.jFWXQ5HhJUKj
