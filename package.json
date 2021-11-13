@@ -6,10 +6,11 @@
   "author": "andychicken <83952965+andychicken@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index",
+    "start": "nodemon src/index",
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
+    "dotenv-safe": "^8.2.0",
     "fastify": "^3.23.1",
     "mongoose": "^6.0.12"
   },

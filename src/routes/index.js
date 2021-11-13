@@ -3,4 +3,3 @@ module.exports = async (router) => {
     return 'hello'
   })
 }
-// 6D.jFWXQ5HhJUKj
