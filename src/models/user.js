@@ -2,20 +2,23 @@ const { Schema,model } = require('mongoose')
 const mongoose = require('mongoose')
 const animalSchema = new Schema({ name: String, type: String });
 
-animalSchema.methods.findSimilarTypes = async function() {
-    const a = await  mongoose.model('Animal').find({ type: this.type })
-    console.log(a)
+  // Assign a function to the "statics" object of our animalSchema
+animalSchema.statics.findByName = function(name) {
+    return this.find({ name: new RegExp(name, 'i') });
   };
-
+  // Or, equivalently, you can call `animalSchema.static()`.
+animalSchema.static('findByBreed', function(breed) { return this.find({ breed }); });
 const Animal = mongoose.model('Animal', animalSchema);
 
-const dog = new Animal({ type: 'meo' });
+
+const dog = new Animal({ name: 'fido' });
   
   (async ()=>{
       //await Animal.deleteMany({})
       
       await Animal.create(dog)
-  })()
 
-  dog.findSimilarTypes()
+      const ex = await Animal.findByName('fido')
+      console.log(ex)
+  })()
   
